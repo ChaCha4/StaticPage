@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/* position:absolute; 会找到最近的祖先级 position 参照定位*/
+		.pic{
+			width: 1600px;
+			height: 392px;
+			margin:0 auto;
+			overflow: hidden;
+		}
+		.pic div{
+			width: 200px;
+			float: left;
+			position: relative;
+			overflow: hidden;
+		}
+		.pic div .marsk{
+			width: 100%;
+			height: 392px;
+			background-color: rgba(0,0,0,0.5);
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="pic">
+		<div>
+			<div class="marsk"></div>
+			<img src="images/gracetan_01.jpg" alt="">
+		</div>
+		<div>
+			<div class="marsk"></div>
+			<img src="images/gracetan_02.jpg" alt="">
+		</div>
+		<div>
+			<div class="marsk"></div>
+			<img src="images/gracetan_03.jpg" alt="">
+		</div>
+		<div>
+			<div class="marsk"></div>
+			<img src="images/gracetan_04.jpg" alt="">
+		</div>
+		<div>
+			<div class="marsk"></div>
+			<img src="images/gracetan_05.jpg" alt="">
+		</div>
+	</div>
+	<script src="js/jquery-3.3.1.js"></script>
+	<script>
+		$('.pic div').mouseenter(function(){
+			$(this).stop().animate({'width':670},1000)
+			// $(this).siblings().stop().animate({'width':200},1000)
+		});
+		$('.pic div').mouseleave(function(){
+			$('.pic div').stop().animate({'width':200},1000)
+			
+		});
+	</script>
+</body>
+</html>

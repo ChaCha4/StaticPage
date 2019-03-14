@@ -1,0 +1,373 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* 导航栏下面的阴影线 */
+header .head-bottom {
+  box-shadow: 0 1px 5px rgb(246, 246, 246);
+}
+/* section 路径部分 */
+section .path {
+  width: 100%;
+  height: 82px;
+  border-bottom: 1px solid rgb(238, 238, 238);
+}
+section .path .contain {
+  width: 1077px;
+  margin: 0 auto;
+}
+section .path .contain a {
+  display: inline-block;
+  color: #999;
+  font-size: 14px;
+  line-height: 82px;
+}
+section .path .contain .icon-you {
+  font-size: 12px;
+  color: rgb(206, 206, 211);
+}
+section .path .contain a:last-child {
+  color: rgb(59, 177, 172);
+}
+section .path .contain a:hover {
+  color: rgb(59, 177, 172);
+}
+/* 三个圆形序号加下面的文字注释 */
+section .number {
+  width: 807px;
+  margin: 0 auto;
+  padding: 100px 100px 100px 200px;
+}
+section .number .num {
+  float: left;
+  width: 240px;
+}
+section .number a {
+  display: block;
+  margin: 0 auto;
+  width: 40px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 20px;
+  color: rgb(153, 153, 153);
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgb(153, 153, 153);
+}
+section .number .active {
+  background-color: rgb(59, 177, 143);
+  color: #fff;
+  border: none;
+}
+section .number .num span {
+  display: block;
+  font-size: 14px;
+  text-align: center;
+  color: #000;
+  line-height: 38px;
+  font-weight: bold;
+}
+/* cart-inner 的样式 */
+section .cart-inner {
+  width: 1077px;
+  margin: 0 auto;
+}
+section .cart-inner .products {
+  float: left;
+}
+section .cart-inner .products table {
+  border-collapse: collapse;
+}
+section .cart-inner .products table thead {
+  height: 41px;
+}
+section .cart-inner .products table thead tr {
+  border-bottom: 1px solid #ddd;
+}
+section .cart-inner .products table thead th {
+  padding-bottom: 20px;
+  height: 18px;
+  font-size: 14px;
+}
+section .cart-inner .products table thead th:first-child {
+  text-align: left;
+  width: 382px;
+}
+section .cart-inner .products table thead th:nth-child(2) {
+  width: 128px;
+}
+section .cart-inner .products table thead th:nth-child(3) {
+  width: 100px;
+}
+section .cart-inner .products table thead th:nth-child(4) {
+  width: 128px;
+}
+section .cart-inner .products table tbody img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin-top: 26px;
+  margin-bottom: 26px;
+  margin-right: 26px;
+}
+section .cart-inner .products table tbody .column {
+  margin-top: 44px;
+}
+section .cart-inner .products table tbody .column h4 {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+section .cart-inner .products table tbody .column li {
+  font-size: 12px;
+  color: #777;
+  line-height: 20px;
+}
+section .cart-inner .products table ul li {
+  list-style: none;
+}
+section .cart-inner .products table tbody > tr + tr {
+  border-top: 1px solid #ddd;
+}
+section .cart-inner .products table tbody tr td:nth-child(2),
+section .cart-inner .products table tbody tr td:nth-child(2) .icon-meiyuan {
+  font-size: 12px;
+  text-align: center;
+}
+section .cart-inner .products table tbody tr td:nth-child(2) span,
+section .cart-inner .products table tbody tr td:nth-child(2) .icon-meiyuan {
+  position: relative;
+  top: 20px;
+  color: #777;
+}
+section .cart-inner .products table tbody tr td:nth-child(3) {
+  text-align: center;
+  width: 100px;
+}
+section .cart-inner .products table tbody tr td:nth-child(3) input {
+  display: block;
+  width: 24px;
+  height: 20px;
+  outline: none;
+  padding-left: 14px;
+  border: 1px solid #ccc;
+  position: relative;
+  left: 14px;
+  top: 20px;
+}
+section .cart-inner .products table tbody tr td:nth-child(3) .icon-down-copy {
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  left: 30px;
+  top: -5px;
+  color: #ccc;
+}
+section
+  .cart-inner
+  .products
+  table
+  tbody
+  tr
+  td:nth-child(3)
+  .icon-down-copy:hover {
+  color: #3bb18f;
+  font-weight: bold;
+}
+section .cart-inner .products table tbody tr td:nth-child(3) .icon-xia {
+  font-size: 24px;
+  cursor: pointer;
+  position: relative;
+  top: -5px;
+  left: 18px;
+  color: #ccc;
+}
+section .cart-inner .products table tbody tr td:nth-child(3) .icon-xia:hover {
+  color: #3bb18f;
+}
+section .cart-inner .products table tbody tr td:nth-child(4) span,
+section .cart-inner .products table tbody tr td:nth-child(4) .icon-meiyuan {
+  position: relative;
+  top: 20px;
+  color: #777;
+}
+section .cart-inner .products table tbody tr td:last-child {
+  text-align: center;
+  position: relative;
+}
+section .cart-inner .products table tbody tr td:last-child .icon-meiyuan,
+section .cart-inner .products table tbody tr td:last-child span {
+  font-size: 12px;
+  color: #777;
+}
+section .cart-inner .products table tbody tr td:last-child .icon-shanchu {
+  position: absolute;
+  left: 124px;
+  top: 64px;
+  color: #777;
+}
+section .cart-inner .products table tbody tr td:last-child .icon-shanchu:hover {
+  color: #000;
+}
+/* summary 部分的样式 */
+section .cart-inner .summary {
+  float: right;
+  width: 300px;
+}
+section .summary .contain {
+  width: 270px;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+section .summary ul li {
+  list-style: none;
+  font-size: 14px;
+}
+section .summary ul li:first-child {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
+  margin-bottom: 16px;
+}
+section .summary ul li:nth-child(2) {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+section .summary ul li:nth-child(2) a {
+  color: #777d88;
+  line-height: 42px;
+}
+section .summary ul li:nth-child(2) .icon-xia {
+  position: relative;
+  top: 4px;
+  left: 6px;
+}
+section .summary ul li:nth-child(2) .form {
+  display: none;
+}
+section .summary ul li:nth-child(3) {
+  margin-top: 22px;
+}
+section .summary ul li:nth-child(3) span:first-child,
+section .summary ul li:last-child span:first-child {
+  float: left;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+}
+section .summary ul li:nth-child(3) span:last-child,
+section .summary ul li:last-child span:last-child {
+  float: right;
+  font-size: 13px;
+}
+section .summary ul li:nth-child(3) span:last-child .icon-meiyuan,
+section .summary ul li:last-child span:last-child .icon-meiyuan {
+  font-size: 12px;
+}
+section .summary ul li:last-child {
+  margin-bottom: 30px;
+}
+section .summary .button-white {
+  display: block;
+  width: 310px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #000;
+  line-height: 54px;
+  margin-top: 34px;
+  transition: all 0.2s;
+}
+section .summary .button-white:hover {
+  background-color: #000;
+  color: #fff;
+}
+section .summary .button-green {
+  display: block;
+  width: 310px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  background-color: #3bb18f;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 54px;
+  margin-top: 34px;
+  transition: all 0.2s;
+}
+section .summary .button-green:hover {
+  background-color: #58c7a7;
+}
+section .summary .delivery {
+  color: #000;
+  font-size: 14px;
+  display: block;
+  margin-top: 20px;
+}
+section .summary .delivery:hover {
+  color: #3bb18f;
+}
+section .summary .delivery .icon-icon-i {
+  margin-right: 4px;
+}
+section .summary .code .apply {
+  font-size: 14px;
+  color: #000;
+  margin-top: 20px;
+}
+section .summary .code .apply .icon-xia {
+  position: relative;
+  top: 2px;
+  left: 12px;
+}
+section .summary .code .search {
+  display: none;
+}
+/* 三个小图标加文字 部分的样式 */
+section .btm-green {
+  width: 100%;
+  background-color: #3bb18f;
+}
+section .box {
+  float: left;
+  width: 225px;
+  padding: 20px 15px;
+  padding-left: 118px;
+  background-position: 50px;
+}
+section .box p {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+section .box p:first-child {
+  font-weight: bold;
+}
+section .box p:last-child {
+  font-size: 12px;
+}
+section .btm-green .container .box2 {
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+section .btm-green .container .box3 {
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+section .container {
+  width: 1077px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+section .box1 {
+  background-image: url("../images/1_03.png");
+  background-repeat: no-repeat;
+}
+section .box2 {
+  background-image: url("../images/2_03.png");
+  background-repeat: no-repeat;
+}
+section .box3 {
+  background-image: url("../images/3_03.png");
+  background-repeat: no-repeat;
+}

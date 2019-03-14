@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" type="text/css" href="./css/swiper-3.4.2.min.css">
+  <style type="text/css">
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #000;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .gallery-top-box {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .gallery-thumbs-box {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .swiper-container {
+      width: 100%;
+      height: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gallery-thumbs {
+      height: 60px;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+
+    .gallery-thumbs .swiper-slide {
+      height: 100%;
+      opacity: 0.4;
+    }
+
+    .gallery-thumbs .swiper-slide-active {
+      opacity: 1;
+    }
+
+    .gallery-thumbs .swiper-wrapper {
+      transform: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Swiper -->
+    <div class="gallery-top-box">
+      <div class="swiper-container gallery-top">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image:url('./images/big1.jpg')"></div>
+          <div class="swiper-slide" style="background-image:url('./images/big2.jpg')"></div>
+          <div class="swiper-slide" style="background-image:url('./images/big3.jpg')"></div>
+
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+      </div>
+    </div>
+    <div class="gallery-thumbs-box">
+      <div class="swiper-container gallery-thumbs">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image:url('./images/preview1.jpg')"></div>
+          <div class="swiper-slide" style="background-image:url('./images/preview2.jpg')"></div>
+          <div class="swiper-slide" style="background-image:url('./images/preview3.jpg')"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Swiper JS -->
+  <script src="./js/swiper-3.4.2.min.js"></script>
+  <script>
+    var leftScreenVal, moveLeftVal;
+    var galleryTop = new Swiper('.gallery-top', {
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      observer: true,
+      observeParents: true,
+      autoplay: 5000,
+      onSlidePrevEnd: function (swiper) {
+        //这里因为居中显示的时候，按照我屏幕默认距离屏幕左边570像素，所以是以570为基准，然后再算每一个图片宽度155，有几张
+        leftScreenVal = document.getElementsByClassName('swiper-slide-active')[1].getBoundingClientRect().left;
+        if (leftScreenVal < 570) {
+          moveLeftVal = document.getElementsByClassName('swiper-slide-active')[1].offsetLeft;
+          moveLeftVal = 155 - moveLeftVal;
+          document.querySelector('.gallery-thumbs > .swiper-wrapper').style.left = moveLeftVal + 'px';
+        }
+      },
+      onSlideNextEnd: function (swiper) {
+        //这里因为居中显示的时候，按照我屏幕默认距离屏幕左边570像素，所以是以570为基准，然后再算每一个图片宽度155，有几张
+        var leftScreenVal = document.getElementsByClassName('swiper-slide-active')[1].getBoundingClientRect().left;
+        if (leftScreenVal >= 880) { // 这里880是因为我基准570加上下边一行默认只显示两张155宽度的缩略图
+          moveLeftVal = document.getElementsByClassName('swiper-slide-active')[1].offsetLeft;
+          moveLeftVal = 0 - moveLeftVal;
+          document.querySelector('.gallery-thumbs > .swiper-wrapper').style.left = moveLeftVal + 'px';
+        }
+      }
+    });
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+      centeredSlides: true,
+      slidesPerView: 2,
+      touchRatio: 0.2,
+      slideToClickedSlide: true,
+      observer: true,
+      observeParents: true,
+      spaceBetween: 10
+    });
+
+    galleryTop.params.control = galleryThumbs;
+    galleryThumbs.params.control = galleryTop;
+  </script>
+</body>
+
+</html>

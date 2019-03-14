@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		input{
+			display: block;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<!-- <form action="">
+		<input type="checkbox" id="agree">
+		<label for="agree">是否同意</label>
+		<button disabled>注册</button>
+	</form> -->
+	<form action="">
+		<input type="checkbox" id="" class="all">
+		<label for="">全选</label>
+		<input type="checkbox" id="" class="radio">
+		<input type="checkbox" id="" class="radio">
+		<input type="checkbox" id="" class="radio">
+		<input type="checkbox" id="" class="all">
+		<label for="">全选</label>
+	</form>
+	<script src="js/jquery-3.3.1.js"></script>
+	<script>
+		// val 获取或设置表单（input textarea）内的内容
+		// text html
+		// 事件 change 表单状态发生变化的时候(checkbox select 选中和不选中的时候)
+		// prop('checked')方法 获取 checkbox 的当前状态 是选中的话 得到 true 相反得到 false
+		// removeAttr('属性名') 删除该属性
+		// $('#agree').change(function(){
+		// 	var state = $(this).prop('checked')
+		// 	if(state == true){
+		// 		$('button').removeAttr('disabled')
+		// 	}else{
+				// 设置成true的意思是让这个属性值为true，也就相当于添加上disabled属性
+		// 		$('button').attr('disabled',true)
+		// 	}
+		// })
+		// $('button').click(function(){
+		// 	// 当该按钮有一些默认的跳转或功能的时候，但是你并不需要(常见的有a的跳转，按钮的提交功能)
+		// 	// 使用 event.preventDefault()阻止默认操作的触发
+		// 	event.preventDefault()
+		// 	$('#agree').prop('checked',true)
+		// })
+		// 1.实现点击某个全选 所有其他的checkbox跟当前点击的全选一致
+		$('.all').change(function(){
+			var state = $(this).prop('checked')
+			// if(state1 == true){
+			// 	$('#two').prop('checked',true)
+			// 	$('#three').prop('checked',true)
+			// 	$('#four').prop('checked',true)
+			// 	$('#five').prop('checked',true)
+			// }else{
+			// 	$('#two').prop('checked',false)
+			// 	$('#three').prop('checked',false)
+			// 	$('#four').prop('checked',false)
+			// 	$('#five').prop('checked',false)
+			// }
+			$(this).siblings('input:checkbox').prop('checked',state)
+		})
+		// $('#five').change(function(){
+		// 	var state5 = $(this).prop('checked')
+		// 	if(state5 == true){
+		// 		$('#two').prop('checked',true)
+		// 		$('#three').prop('checked',true)
+		// 		$('#four').prop('checked',true)
+		// 		$('#one').prop('checked',true)
+		// 	}else{
+		// 		$('#two').prop('checked',false)
+		// 		$('#three').prop('checked',false)
+		// 		$('#four').prop('checked',false)
+		// 		$('#one').prop('checked',false)
+		// 	}
+		// })
+		// 2.点击单选 只要四个按钮都是 true的话，全选变为true 只要当前的按钮变为false 全选肯定是false
+		$('.radio').change(function(){
+			var state = $(this).prop('checked')
+			// 判断当前按钮的状态
+			// 如果是false 那么直接让全选变 false
+			// 如果是true 那么需要判断其他三个是否也为true 都为true的话 全选选中
+			// xx.each(function(){}) 该方法的作用是 查找each前面的每一个人 分别执行function里面的内容，内部的$(this)指的就是当前查找到的那个
+			// $('.radio').each(function(){
+			// 	$(this).prop('checked',true)
+			// })
+			if(state == false){
+				$('.all').prop('checked',false)
+			}else{
+				// 看其他人的状态是否为true 如果是true改变全选为选中
+				// 在检查所有radio的状态之前 定义一个allState
+				// allState 代表全选的状态 默认全选状态为true
+				
+				// 遍历所有的radio获取当前radio的状态，只要当某一个radio的状态为false的时候，全选状态肯定也为false，那么allState变为false
+				// 遍历完毕之后得到的allState即为页面中全选的状态
+				// 方法一
+				// var allState = true
+				$('.radio').each(function(){
+
+					var state1 = $(this).prop('checked')
+					if(state1 == false){
+						allState = false
+					}
+				})
+				$('.all').prop('checked',allState)
+				// 方法二
+				var truenumber = 0
+				$('.radio').each(function(){
+					var state1 = $(this).prop('checked')
+					if(state1 == true){
+						truenumber +=1 
+					}
+
+				})
+				if(truenumber == 3){
+					$('.all').prop('checked',true)
+				}
+			}
+		})
+	</script>
+</body>
+</html>

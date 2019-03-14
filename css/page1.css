@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* 导航栏下面的阴影线 */
+header .head-bottom {
+  box-shadow: 0 1px 5px rgb(246, 246, 246);
+}
+/* section 路径部分 */
+section .path {
+  width: 100%;
+  height: 82px;
+  border-bottom: 1px solid rgb(238, 238, 238);
+}
+section .path .contain {
+  width: 1077px;
+  margin: 0 auto;
+}
+section .path .contain a {
+  display: inline-block;
+  color: #999;
+  font-size: 14px;
+  line-height: 82px;
+}
+section .path .contain .icon-you {
+  font-size: 12px;
+  color: rgb(206, 206, 211);
+}
+section .path .contain a:last-child {
+  color: rgb(59, 177, 172);
+}
+section .path .contain a:hover {
+  color: rgb(59, 177, 172);
+}
+/* section 商品详情部分的样式 */
+section .preview {
+  width: 1077px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+/* 缩略图部分 */
+section .preview .mini-picture {
+  float: left;
+  width: 635px;
+  height: 882px;
+}
+section .preview .swiper-container {
+  width: 635px;
+  height: 882px;
+}
+section .preview .swiper-slide img {
+  width: 650px;
+  height: 750px;
+}
+section .preview .gallery-thumbs img {
+  width: 250px;
+  height: 170px;
+}
+section .preview .swiper-container .swiper-button-prev,
+section .preview .swiper-container .swiper-button-next {
+  width: 34px;
+  height: 34px;
+  border-radius: 17px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #fff;
+  top: 38%;
+}
+section .preview .swiper-container .swiper-button-prev {
+  background-image: url("../images/prevw_01.png");
+  background-repeat: no-repeat;
+}
+section .preview .swiper-container .swiper-button-next {
+  background-image: url("../images/nextw_02.png");
+  background-repeat: no-repeat;
+  right: 36px;
+}
+section .preview .swiper-container .swiper-button-prev:hover {
+  background-image: url("../images/prevgren004_01.png");
+  background-repeat: no-repeat;
+}
+section .preview .swiper-container .swiper-button-next:hover {
+  background-image: url("../images/nextgreen_02.png");
+  background-repeat: no-repeat;
+}
+/* 商品详情 */
+section .preview .info {
+  float: left;
+}
